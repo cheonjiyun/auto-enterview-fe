@@ -1,7 +1,7 @@
 # Auto Enter View
 
 <div align="center">
-<img width="300" alt="image" src="./public/img/Property 1=Default.png">
+<img width="500" alt="image" src="./public/img/Property 1=Default.png">
 
 </div>
 
@@ -23,7 +23,7 @@
 
 |                       송유나                        |                       옥예원                        |                       천지윤                       |
 | :-------------------------------------------------: | :-------------------------------------------------: | :------------------------------------------------: |
-| <img width="160px" src="./public/img/송유나.jpg" /> | <img width="160px" src="./public/img/옥예원.jpg" /> | <img width="160px" src="./public/img/천지윤.png"/> |
+| <img width="160px" src="./public/img/송유나.jpg" /> | <img width="180px" src="./public/img/옥예원.jpg" /> | <img width="160px" src="./public/img/천지윤.png"/> |
 |       [@songuna](https://github.com/songuna)        |        [okyewon](https://github.com/okyewon)        |    [@cheonjiyun](https://github.com/cheonjiyun)    |
 |           제로베이스 프론트엔드 스쿨 23기           |           제로베이스 프론트엔드 스쿨 23기           |          제로베이스 프론트엔드 스쿨 23기           |
 
@@ -97,10 +97,10 @@
 
 ## ERD
 
-<img width="300" alt="image" src="./public/img/Auto Enter View ERD.png">
+<img width="500" alt="image" src="./public/img/Auto Enter View ERD.png">
 
 ---
 
 ## 아키텍처
 
-<img width="300" alt="image" src="./public/img/아키텍쳐.PNG.png">
+<img width="500" alt="image" src="./public/img/아키텍쳐.PNG.png">
