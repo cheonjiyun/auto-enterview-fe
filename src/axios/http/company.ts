@@ -2,7 +2,7 @@ import { CompanyInfo } from "../../type/company";
 import { http } from "../instances";
 
 export const getCompanyInfo = (companyKey: string) => {
-  return http.get<CompanyInfo>(`/companies/${companyKey}`);
+  return http.get<CompanyInfo>(`/companies/${companyKey}/infomation`);
 };
 
 export const postCompanyInfo = (companyKey: string, body: CompanyInfo) => {

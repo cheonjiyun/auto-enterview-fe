@@ -15,7 +15,7 @@ const Index = () => {
   const authUser = useRecoilValue(authUserState);
   const [jobInfos, setJobInfos] = useState<JobInfo[]>([]);
   const [page, setPage] = useState(1);
-  const totalPage = useRef(0);
+  // const totalPage = useRef(0);
   const [isInfoMessage, setIsInfoMessage] = useState(false);
 
   const navigate = useNavigate();
@@ -26,8 +26,9 @@ const Index = () => {
       entries => {
         if (entries[0].isIntersecting) {
           setPage(prevPage => {
-            if (prevPage < totalPage.current) return prevPage + 1;
-            return prevPage;
+            // if (prevPage < totalPage.current) return prevPage + 1;
+            // return prevPage;
+            return prevPage + 1;
           });
         }
       },
@@ -51,10 +52,10 @@ const Index = () => {
   useEffect(() => {
     (async () => {
       const response = await getJobPostings(page);
-      totalPage.current = response.pages;
+      // totalPage.current = response.pages;
 
       setJobInfos(prevJobInfos => {
-        const newJobInfos = response.data.filter(
+        const newJobInfos = response.filter(
           jobInfo => !prevJobInfos.some(info => info.jobPostingKey === jobInfo.jobPostingKey),
         );
         return [...prevJobInfos, ...newJobInfos];
@@ -69,11 +70,11 @@ const Index = () => {
         return;
       }
 
-      if (authUser.role === "ROLE_CANDIDATE") {
-        const response = await getResume(authUser.key);
+      if (authUser.user.role === "ROLE_CANDIDATE") {
+        const response = await getResume(authUser.user.key);
         if (response.title == null) setIsInfoMessage(true);
-      } else if (authUser.role === "ROLE_COMPANY") {
-        const response = await getCompanyInfo(authUser.key);
+      } else if (authUser.user.role === "ROLE_COMPANY") {
+        const response = await getCompanyInfo(authUser.user.key);
         if (!response.boss) setIsInfoMessage(true);
       }
     })();
@@ -110,7 +111,7 @@ const Index = () => {
         <InfoMessage>
           {!authUser
             ? ""
-            : authUser.role === "ROLE_CANDIDATE"
+            : authUser.user.role === "ROLE_CANDIDATE"
               ? "아직 이력서를 작성하지 않았습니다."
               : "아직 회사정보를 작성하지 않았습니다."}
           <br></br>

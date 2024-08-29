@@ -77,9 +77,9 @@ const JobPostDetail = () => {
             alert("마감 기한이 지난 공고 입니다.");
             if (!authUser) {
               navigate("/");
-            } else if (authUser?.role == "ROLE_COMPANY") {
+            } else if (authUser?.user.role == "ROLE_COMPANY") {
               navigate("/company-mypage");
-            } else if (authUser?.role == "ROLE_CANDIDATE") {
+            } else if (authUser?.user.role == "ROLE_CANDIDATE") {
               navigate("/user-mypage");
             }
           }
@@ -148,7 +148,7 @@ const JobPostDetail = () => {
                 <div>공고마감일자 | {getDateFormat(new Date(jobPostingInfo.endDate))}</div>
                 <Dday>({getDday(jobPostingInfo.endDate)})</Dday>
               </DeadLineContainer>
-              {jobPostingInfo.companyKey == authUser?.key && (
+              {jobPostingInfo.companyKey == authUser?.user.key && (
                 <EditDeleteButtonContianer>
                   <IconButton className="delete" onClick={deleteJobPosting}>
                     <MdDeleteForever />
@@ -270,7 +270,7 @@ const JobPostDetail = () => {
               </LongInfo>
             </InfoContainer>
           </Container>
-          {jobPostingInfo.companyKey == authUser?.key || (
+          {jobPostingInfo.companyKey == authUser?.user.key || (
             <ApplyButton onClick={Apply}>지원하기</ApplyButton>
           )}
         </Inner>

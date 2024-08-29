@@ -1,0 +1,6 @@
+{
+  "/common/job-postings?page=:page": "/job-postings?_page=:page&_limit=24",
+  "/common/job-postings/:jobPostingKey": "/job-postings/:jobPostingKey",
+  "/companies/:companyKey/infomation": "/companies/:companyKey",
+  "/companies/:companyKey/posted-job-postings": "/job-postings?companyKey=:companyKey"
+}

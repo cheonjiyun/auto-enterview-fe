@@ -49,12 +49,12 @@ const CompanyMypage = () => {
   const values = [bossValue, ageValue, addressValue, employeesValue, urlValue];
 
   useEffect(() => {
-    if (!authUser || authUser.role !== "ROLE_COMPANY") return;
+    if (!authUser || authUser.user.role !== "ROLE_COMPANY") return;
     // 회사정보 불러오기
     const fetchCompanyInfo = async () => {
       try {
         const { boss, companyAge, address, employees, companyUrl } = await getCompanyInfo(
-          authUser.key,
+          authUser.user.key,
         );
         setInfo([
           { title: "대표자", desc: boss },
@@ -79,11 +79,11 @@ const CompanyMypage = () => {
   }, [authUser]);
 
   useEffect(() => {
-    if (!authUser || authUser.role !== "ROLE_COMPANY") return;
+    if (!authUser || authUser.user.role !== "ROLE_COMPANY") return;
     // 채용공고 목록 불러오기
     const fetchJobPosting = async () => {
       try {
-        const response = await getPostedJobPostings(authUser.key);
+        const response = await getPostedJobPostings(authUser.user.key);
         setJobPostingList(response);
       } catch (error) {
         alert("채용공고 목록을 불러오는데 문제가 생겼습니다.");
@@ -119,7 +119,7 @@ const CompanyMypage = () => {
 
   // 회사정보 저장
   const saveInfo = async () => {
-    if (!authUser || authUser.role !== "ROLE_COMPANY") return;
+    if (!authUser || authUser.user.role !== "ROLE_COMPANY") return;
 
     const body = {
       employees: Number(employeesValue),
@@ -136,9 +136,9 @@ const CompanyMypage = () => {
 
       try {
         if (isEdit) {
-          await putCompanyInfo(authUser.key, body);
+          await putCompanyInfo(authUser.user.key, body);
         } else {
-          await postCompanyInfo(authUser.key, body);
+          await postCompanyInfo(authUser.user.key, body);
         }
         setEditMode(edit => !edit);
         setInfo([
@@ -172,7 +172,7 @@ const CompanyMypage = () => {
       </Helmet>
       <Wrapper>
         <Inner className="inner-1200">
-          <UserName>{authUser?.name}</UserName>
+          <UserName>{authUser?.user.name}</UserName>
           <Container>
             <Top>
               <SubTitle>회사 정보</SubTitle>
