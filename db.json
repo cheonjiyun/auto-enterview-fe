@@ -1,0 +1,432 @@
+{
+  "job-postings": [
+    {
+      "id": "9712b6ba2e454dba974f289f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba974f289f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "jobCategory": "프론트엔드 개발",
+      "career": 3,
+      "workLocation": "제주 제주시 애월읍",
+      "education": "4년제",
+      "employmentType": "정규직",
+      "salary": 8000,
+      "workTime": "09:00 ~ 18:00",
+      "startDate": "2024-10-10",
+      "endDate": "2024-12-25",
+      "jobPostingContent": "자격요건 : React 서비스 배포경험",
+      "techStack": ["React", "Vue.js"],
+      "step": ["서류전형", "1차면접", "2차면접"],
+      "image": "https://file.notion.so/f/f/75cb1fa8-17d7-458a-89f6-3962466ce747/c9f33254-3a35-4c95-bf34-2a7020d0ff86/Group_10.png?table=block&id=101b75b6-cfd8-4e77-9ef3-2cc1068002f5&spaceId=75cb1fa8-17d7-458a-89f6-3962466ce747&expirationTimestamp=1725004800000&signature=RVZwV5uDaHHZ2Qz4BWjdYbNRwdJA79Xiy3JnIqePXcU&downloadName=Group+10.png"
+    },
+    {
+      "id": "9712b6ba2e454942f7469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454942f7469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97b56392f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba97b56392f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "안드로이드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba15759a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba15759a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454df6812469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454df6812469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "ios 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba9613aa92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba9613aa92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "[신입] 프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba12349dba97469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba12349dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "[경력]프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a92fd985e1",
+      "jobPostingKey": "9712b6ba2e454dba97469a92fd985e1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a92f5e954e1",
+      "jobPostingKey": "9712b6ba2e454dba97469a92f5e954e1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba974d5682f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba974d5682f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dc5865469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dc5865469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "구글",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba9746b568f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba9746b568f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "백엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a92fa475fe1",
+      "jobPostingKey": "9712b6ba2e454dba97469a92fa475fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6b565a54dba97469a92f5a68fe1",
+      "jobPostingKey": "9712b6b565a54dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "안드로이드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454db651e69a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454db651e69a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6b515a54dba97469a92f5a68fe1",
+      "jobPostingKey": "9712b6b515a54dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a92f3575fe1",
+      "jobPostingKey": "9712b6ba2e454dba97469a92f3575fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba91597a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba91597a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454db657c69a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454db657c69a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a92f12345e1",
+      "jobPostingKey": "9712b6ba2e454dba97469a92f12345e1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "ios 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a92f5a66b5a",
+      "jobPostingKey": "9712b6ba2e454dba97469a92f5a66b5a",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a9235a58fe1",
+      "jobPostingKey": "9712b6ba2e454dba97469a9235a58fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6357e454dba97469a92f5a68fe1",
+      "jobPostingKey": "9712b6357e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "3bfab6ba2e454dba97469a92f5a68fe1",
+      "jobPostingKey": "3bfab6ba2e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba55559a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba55559a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e357cba97469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e357cba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e45354a97469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e45354a97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454db684569a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454db684569a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a456fa68fe1",
+      "jobPostingKey": "9712b6ba2e454dba97469a456fa68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a92f5aa5741",
+      "jobPostingKey": "9712b6ba2e454dba97469a92f5aa5741",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "백엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a9a396768fe1",
+      "jobPostingKey": "9712b6ba2e454dba97469a9a396768fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "[신입] 백엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba97469a5675a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba97469a5675a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba85679a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba85679a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e42340a97469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e42340a97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e454dba92867a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e454dba92867a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6ba2e4abcba97469a92f5a68fe1",
+      "jobPostingKey": "9712b6ba2e4abcba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b6b45a454dba97469a92f5a68fe1",
+      "jobPostingKey": "9712b6b45a454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9712b5642e454dba97469a92f5a68fe1",
+      "jobPostingKey": "9712b5642e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "971286562e454dba97469a92f5a68fe1",
+      "jobPostingKey": "971286562e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "971267452e454dba97469a92f5a68fe1",
+      "jobPostingKey": "971267452e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "9713457a2e454dba97469a92f5a68fe1",
+      "jobPostingKey": "9713457a2e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "971112ba2e454dba97469a92f5a68fe1",
+      "jobPostingKey": "971112ba2e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "912346ba2e454dba97469a92f5a68fe1",
+      "jobPostingKey": "912346ba2e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "1111b6ba2e454dba97469a92f5a68fe1",
+      "jobPostingKey": "a111b6ba2e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    },
+    {
+      "id": "1234b6ba2e454dba97469a92f5a68fe1",
+      "jobPostingKey": "1134b6ba2e454dba97469a92f5a68fe1",
+      "companyKey": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "title": "프론트엔드 개발자 채용",
+      "techStack": ["React", "Vue.js"],
+      "endDate": "2024-10-22"
+    }
+  ],
+
+  "companies": [
+    {
+      "id": "1c5ebd76ee1e4cd2b66c4285a3376dd1",
+      "companyName": "네이버",
+      "employees": 100,
+      "companyAge": "1990-01-10",
+      "companyUrl": "www.naver.com",
+      "boss": "내가사장",
+      "address": "경기도 성남"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 export interface JobInfos {
-  jobPostingsList: JobInfo[];
-  totalElements: number;
-  totalPages: number;
+  data: JobInfo[];
+  itmes: number;
+  pages: number;
 }
 
 export interface JobInfo {
+  id: string;
   jobPostingKey: string;
   companyName: string;
   title: string;

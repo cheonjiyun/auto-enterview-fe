@@ -5,12 +5,17 @@ import { http } from "../instances";
 
 // 전체 공고 조회
 export const getJobPostings = (page: number) => {
-  return http.get<JobInfos>(`common/job-postings?page=${page}`);
+  return http.get<JobInfos>(`job-postings?_page=${page}&_per_page=24`);
 };
 
 // 회사 마이페이지 공고 조회
 export const getPostedJobPostings = (companyKey: string) => {
   return http.get<PostedJobPoting[]>(`companies/${companyKey}/posted-job-postings`);
+};
+
+// 상세 조회
+export const getJobPosting = (jobPostingKey: string) => {
+  return http.get<JobPostingDetail>(`job-postings/${jobPostingKey}`);
 };
 
 export const postCompaniesJobPosting = (
@@ -35,8 +40,4 @@ export const deleteCompaniesJobPosting = (jobPostingKey: string) => {
 
 export const postJobPostingApply = (jobPostingKey: string) => {
   return http.post(`job-postings/${jobPostingKey}/apply`);
-};
-
-export const getJobPosting = (jobPostingKey: string) => {
-  return http.get<JobPostingDetail>(`common/job-postings/${jobPostingKey}`);
 };

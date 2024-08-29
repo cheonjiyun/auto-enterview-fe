@@ -51,10 +51,10 @@ const Index = () => {
   useEffect(() => {
     (async () => {
       const response = await getJobPostings(page);
-      totalPage.current = response.totalPages;
+      totalPage.current = response.pages;
 
       setJobInfos(prevJobInfos => {
-        const newJobInfos = response.jobPostingsList.filter(
+        const newJobInfos = response.data.filter(
           jobInfo => !prevJobInfos.some(info => info.jobPostingKey === jobInfo.jobPostingKey),
         );
         return [...prevJobInfos, ...newJobInfos];
