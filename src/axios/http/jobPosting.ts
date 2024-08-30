@@ -1,11 +1,15 @@
 import { AxiosRequestConfig } from "axios";
 import { PostedJobPoting } from "../../type/company";
-import { JobPosting, JobPostingDetail, JobPostingResponse } from "../../type/jobPosting";
+import { JobPosting, JobPostingResponse } from "../../type/jobPosting";
 import { http } from "../instances";
+import { toLocaleDate } from "../../utils/Format";
 
 // 전체 공고 조회
 export const getJobPostings = (page: number) => {
-  return http.get<JobPosting[]>(`common/job-postings?page=${page}`);
+  const today = new Date();
+  return http.get<JobPosting[]>(
+    `common/job-postings?page=${page}&_sort=endDate&endDate_gte=${toLocaleDate(today)}`,
+  );
 };
 
 // 회사 마이페이지 공고 조회
@@ -15,7 +19,7 @@ export const getPostedJobPostings = (companyKey: string) => {
 
 // 상세 조회
 export const getJobPosting = (jobPostingKey: string) => {
-  return http.get<JobPostingDetail>(`common/job-postings/${jobPostingKey}`);
+  return http.get<JobPosting>(`common/job-postings/${jobPostingKey}`);
 };
 
 export const postCompaniesJobPosting = (
@@ -38,6 +42,18 @@ export const deleteCompaniesJobPosting = (jobPostingKey: string) => {
   return http.delete(`job-postings/${jobPostingKey}`);
 };
 
-export const applyJobPosting = (jobPostingKey: string, jobPostingData: JobPosting) => {
-  return http.put(`job-postings/${jobPostingKey}/apply`, jobPostingData);
+export const applyJobPosting = (
+  jobPostingKey: string,
+  candidateKey: string,
+  endDate: string,
+  stepName: string,
+  title: string,
+) => {
+  return http.post(`job-postings/${jobPostingKey}/apply`, {
+    candidateKey: candidateKey,
+    jobPostingKey: jobPostingKey,
+    endDate: endDate,
+    stepName: stepName,
+    title: title,
+  });
 };

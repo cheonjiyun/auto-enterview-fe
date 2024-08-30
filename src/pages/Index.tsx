@@ -96,11 +96,13 @@ const Index = () => {
       }
 
       try {
-        // json-server에 응시자 데이터 넣기
-        if (!jobPostingData.appliedCandidates.includes(authUser.user.key)) {
-          jobPostingData.appliedCandidates.push(authUser.user.key);
-        }
-        await applyJobPosting(jobPostingKey, jobPostingData);
+        await applyJobPosting(
+          jobPostingKey,
+          authUser.user.key,
+          jobPostingData.endDate,
+          "지원 완료",
+          jobPostingData.title,
+        );
         alert("지원되었습니다.");
       } catch (e) {
         if (axios.isAxiosError(e)) {

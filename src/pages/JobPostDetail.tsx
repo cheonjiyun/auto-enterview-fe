@@ -9,7 +9,7 @@ import {
 } from "../axios/http/jobPosting";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { JobPosting, JobPostingDetail } from "../type/jobPosting";
+import { JobPosting } from "../type/jobPosting";
 import { getDateFormat, getDday } from "../utils/Format";
 import { CompanyInfo } from "../type/company";
 import { Helmet } from "react-helmet-async";
@@ -44,9 +44,10 @@ const JobPostDetail = () => {
     jobPostingContent: "",
     passingNumber: 0,
     image: "",
-    appliedCandidates: [],
   });
   const [companyInfo, setCompanyInfo] = useState<CompanyInfo>({
+    id: authUser?.user.key || "",
+    companyKey: authUser?.user.key || "",
     companyName: "(주)안드로메다",
     employees: 1315,
     companyAge: "2024-07-18",
@@ -115,12 +116,13 @@ const JobPostDetail = () => {
 
       // 로그인한 사용자만
       try {
-        // json-server에 응시자 데이터 넣기
-        if (!jobPostingInfo.appliedCandidates.includes(authUser.user.key)) {
-          jobPostingInfo.appliedCandidates.push(authUser.user.key);
-        }
-
-        await applyJobPosting(jobPostingKey, jobPostingInfo);
+        await applyJobPosting(
+          jobPostingKey,
+          authUser.user.key,
+          jobPostingInfo.endDate,
+          "지원 완료",
+          jobPostingInfo.title,
+        );
         alert("지원되었습니다.");
       } catch (e) {
         if (axios.isAxiosError(e)) {

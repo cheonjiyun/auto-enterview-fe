@@ -20,14 +20,12 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { authUserState } from "../recoil/store";
 import { getAppliedJobPostings } from "../axios/http/candidate";
-import { AppliedJobPostings } from "../type/candidate";
+import { AppliedJobPostingsList } from "../type/candidate";
 import { getDday, getDdayNumber } from "../utils/Format";
 
 const UserMypage = () => {
   const [isResume, setIsResume] = useState(false);
-  const [jobPostingList, setJobPostingList] = useState<
-    AppliedJobPostings["appliedJobPostingsList"]
-  >([]);
+  const [jobPostingList, setJobPostingList] = useState<AppliedJobPostingsList[]>([]);
   const authUser = useRecoilValue(authUserState);
 
   useEffect(() => {
@@ -50,7 +48,7 @@ const UserMypage = () => {
     // 내가 지원한 공고 목록
     const fetchApplied = async () => {
       try {
-        const { appliedJobPostingsList } = await getAppliedJobPostings(authUser.user.key);
+        const appliedJobPostingsList = await getAppliedJobPostings(authUser.user.key);
         setJobPostingList(appliedJobPostingsList);
       } catch (error) {
         alert("지원한 공고를 불러오는데 문제가 생겼습니다.");

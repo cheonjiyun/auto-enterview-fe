@@ -84,5 +84,4 @@ export interface JobPosting {
   step: string[];
   passingNumber: number;
   image: string;
-  appliedCandidates: string[];
 }
