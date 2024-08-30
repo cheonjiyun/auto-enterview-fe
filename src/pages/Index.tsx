@@ -3,9 +3,9 @@ import { Wrapper } from "../assets/style/Common";
 import { useNavigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { authUserState } from "../recoil/store";
-import { getJobPostings, postJobPostingApply } from "../axios/http/jobPosting";
+import { getJobPostings, applyJobPosting } from "../axios/http/jobPosting";
 import { useEffect, useRef, useState } from "react";
-import { JobInfo } from "../type/jobPosting";
+import { JobPosting } from "../type/jobPosting";
 import { getDday } from "../utils/Format";
 import { getResume } from "../axios/http/resume";
 import { getCompanyInfo } from "../axios/http/company";
@@ -13,7 +13,7 @@ import axios from "axios";
 
 const Index = () => {
   const authUser = useRecoilValue(authUserState);
-  const [jobInfos, setJobInfos] = useState<JobInfo[]>([]);
+  const [jobInfos, setJobInfos] = useState<JobPosting[]>([]);
   const [page, setPage] = useState(1);
   // const totalPage = useRef(0);
   const [isInfoMessage, setIsInfoMessage] = useState(false);
@@ -84,14 +84,23 @@ const Index = () => {
     navigate(`/jobpost-detail/${jobPostingKey}`);
   };
 
-  const apply = async (jobPostingKey: string) => {
+  const apply = async (jobPostingKey: string, jobPostingData: JobPosting) => {
     if (!jobPostingKey) return;
 
     if (!authUser) {
       if (confirm("로그인 하시겠습니까?")) navigate("/login");
     } else if (confirm("정말 지원하시겠습니까?")) {
+      if (authUser.user.role == "ROLE_COMPANY") {
+        alert("회사는 지원할 수 없습니다.");
+        return;
+      }
+
       try {
-        await postJobPostingApply(jobPostingKey);
+        // json-server에 응시자 데이터 넣기
+        if (!jobPostingData.appliedCandidates.includes(authUser.user.key)) {
+          jobPostingData.appliedCandidates.push(authUser.user.key);
+        }
+        await applyJobPosting(jobPostingKey, jobPostingData);
         alert("지원되었습니다.");
       } catch (e) {
         if (axios.isAxiosError(e)) {
@@ -128,7 +137,7 @@ const Index = () => {
             <ApplyButton
               onClick={event => {
                 event.stopPropagation();
-                apply(jobInfo.jobPostingKey);
+                apply(jobInfo.jobPostingKey, jobInfo);
               }}
             >
               지원하기

@@ -122,6 +122,9 @@ const CompanyMypage = () => {
     if (!authUser || authUser.user.role !== "ROLE_COMPANY") return;
 
     const body = {
+      id: authUser.user.key,
+      companyKey: authUser.user.key,
+      companyName: authUser.user.name,
       employees: Number(employeesValue),
       companyAge: ageValue,
       companyUrl: urlValue,
@@ -136,6 +139,8 @@ const CompanyMypage = () => {
 
       try {
         if (isEdit) {
+          console.log(body);
+
           await putCompanyInfo(authUser.user.key, body);
         } else {
           await postCompanyInfo(authUser.user.key, body);

@@ -35,7 +35,7 @@ const UserMypage = () => {
     // 이력서가 등록되어 있는지 확인
     const fetchResume = async () => {
       try {
-        const response = await getResume(authUser.key);
+        const response = await getResume(authUser.user.key);
         if (response.title !== null) setIsResume(true);
       } catch (error) {
         alert("이력서를 불러오는데 문제가 생겼습니다.");
@@ -50,7 +50,7 @@ const UserMypage = () => {
     // 내가 지원한 공고 목록
     const fetchApplied = async () => {
       try {
-        const { appliedJobPostingsList } = await getAppliedJobPostings(authUser.key);
+        const { appliedJobPostingsList } = await getAppliedJobPostings(authUser.user.key);
         setJobPostingList(appliedJobPostingsList);
       } catch (error) {
         alert("지원한 공고를 불러오는데 문제가 생겼습니다.");
@@ -66,7 +66,7 @@ const UserMypage = () => {
           <UserTop>
             <SubTitle>응시자 정보</SubTitle>
             {isResume ? (
-              <ReadResume to={`/view-resume/${authUser?.key}`}>이력서 보기</ReadResume>
+              <ReadResume to={`/view-resume/${authUser?.user.key}`}>이력서 보기</ReadResume>
             ) : (
               <CreateResume to="/create-resume">이력서 생성</CreateResume>
             )}
@@ -74,11 +74,11 @@ const UserMypage = () => {
           <UserInfo>
             <Info className="text">
               <InfoTitle>이름</InfoTitle>
-              <InfoDesc>{authUser?.name}</InfoDesc>
+              <InfoDesc>{authUser?.user.name}</InfoDesc>
             </Info>
             <Info className="text">
               <InfoTitle>이메일</InfoTitle>
-              <InfoDesc>{authUser?.email}</InfoDesc>
+              <InfoDesc>{authUser?.user.email}</InfoDesc>
             </Info>
           </UserInfo>
         </Container>

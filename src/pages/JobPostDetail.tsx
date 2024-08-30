@@ -5,11 +5,11 @@ import { IconButton } from "../assets/style/ReactIconButton";
 import {
   deleteCompaniesJobPosting,
   getJobPosting,
-  postJobPostingApply,
+  applyJobPosting,
 } from "../axios/http/jobPosting";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { JobPostingDetail } from "../type/jobPosting";
+import { JobPosting, JobPostingDetail } from "../type/jobPosting";
 import { getDateFormat, getDday } from "../utils/Format";
 import { CompanyInfo } from "../type/company";
 import { Helmet } from "react-helmet-async";
@@ -24,8 +24,11 @@ const JobPostDetail = () => {
   const authUser = useRecoilValue(authUserState);
   const { jobPostingKey } = useParams();
 
-  const [jobPostingInfo, setJobPostingInfo] = useState<JobPostingDetail>({
+  const [jobPostingInfo, setJobPostingInfo] = useState<JobPosting>({
+    id: "",
+    jobPostingKey: "",
     companyKey: "",
+    companyName: "",
     title: "공고제목",
     jobCategory: "",
     career: 4,
@@ -39,7 +42,9 @@ const JobPostDetail = () => {
     startDate: "2024-07-18",
     endDate: "2024-07-18",
     jobPostingContent: "",
+    passingNumber: 0,
     image: "",
+    appliedCandidates: [],
   });
   const [companyInfo, setCompanyInfo] = useState<CompanyInfo>({
     companyName: "(주)안드로메다",
@@ -103,9 +108,19 @@ const JobPostDetail = () => {
       //로그인하지 않았다면 로그인으로 보내기 alert
       if (confirm("로그인 하시겠습니까?")) navigate("/login");
     } else if (confirm("정말 지원하시겠습니까?")) {
+      if (authUser.user.role == "ROLE_COMPANY") {
+        alert("회사는 지원할 수 없습니다.");
+        return;
+      }
+
       // 로그인한 사용자만
       try {
-        await postJobPostingApply(jobPostingKey);
+        // json-server에 응시자 데이터 넣기
+        if (!jobPostingInfo.appliedCandidates.includes(authUser.user.key)) {
+          jobPostingInfo.appliedCandidates.push(authUser.user.key);
+        }
+
+        await applyJobPosting(jobPostingKey, jobPostingInfo);
         alert("지원되었습니다.");
       } catch (e) {
         if (axios.isAxiosError(e)) {
