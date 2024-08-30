@@ -143,7 +143,7 @@ const CompanyMypage = () => {
 
           await putCompanyInfo(authUser.user.key, body);
         } else {
-          await postCompanyInfo(authUser.user.key, body);
+          await postCompanyInfo(body);
         }
         setEditMode(edit => !edit);
         setInfo([

@@ -247,7 +247,6 @@ const CreateJobPost = () => {
       jobPostingContent: formData.jobPostingContent,
       passingNumber: +formData.passingNumber,
       image: "",
-      appliedCandidates: [],
     };
 
     if (editMode) {
