@@ -5,11 +5,11 @@ import { IconButton } from "../assets/style/ReactIconButton";
 import {
   deleteCompaniesJobPosting,
   getJobPosting,
-  postJobPostingApply,
+  applyJobPosting,
 } from "../axios/http/jobPosting";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { JobPostingDetail } from "../type/jobPosting";
+import { JobPosting } from "../type/jobPosting";
 import { getDateFormat, getDday } from "../utils/Format";
 import { CompanyInfo } from "../type/company";
 import { Helmet } from "react-helmet-async";
@@ -24,8 +24,11 @@ const JobPostDetail = () => {
   const authUser = useRecoilValue(authUserState);
   const { jobPostingKey } = useParams();
 
-  const [jobPostingInfo, setJobPostingInfo] = useState<JobPostingDetail>({
+  const [jobPostingInfo, setJobPostingInfo] = useState<JobPosting>({
+    id: "",
+    jobPostingKey: "",
     companyKey: "",
+    companyName: "",
     title: "공고제목",
     jobCategory: "",
     career: 4,
@@ -39,9 +42,12 @@ const JobPostDetail = () => {
     startDate: "2024-07-18",
     endDate: "2024-07-18",
     jobPostingContent: "",
+    passingNumber: 0,
     image: "",
   });
   const [companyInfo, setCompanyInfo] = useState<CompanyInfo>({
+    id: authUser?.user.key || "",
+    companyKey: authUser?.user.key || "",
     companyName: "(주)안드로메다",
     employees: 1315,
     companyAge: "2024-07-18",
@@ -77,9 +83,9 @@ const JobPostDetail = () => {
             alert("마감 기한이 지난 공고 입니다.");
             if (!authUser) {
               navigate("/");
-            } else if (authUser?.role == "ROLE_COMPANY") {
+            } else if (authUser?.user.role == "ROLE_COMPANY") {
               navigate("/company-mypage");
-            } else if (authUser?.role == "ROLE_CANDIDATE") {
+            } else if (authUser?.user.role == "ROLE_CANDIDATE") {
               navigate("/user-mypage");
             }
           }
@@ -103,9 +109,20 @@ const JobPostDetail = () => {
       //로그인하지 않았다면 로그인으로 보내기 alert
       if (confirm("로그인 하시겠습니까?")) navigate("/login");
     } else if (confirm("정말 지원하시겠습니까?")) {
+      if (authUser.user.role == "ROLE_COMPANY") {
+        alert("회사는 지원할 수 없습니다.");
+        return;
+      }
+
       // 로그인한 사용자만
       try {
-        await postJobPostingApply(jobPostingKey);
+        await applyJobPosting(
+          jobPostingKey,
+          authUser.user.key,
+          jobPostingInfo.endDate,
+          "지원 완료",
+          jobPostingInfo.title,
+        );
         alert("지원되었습니다.");
       } catch (e) {
         if (axios.isAxiosError(e)) {
@@ -148,7 +165,7 @@ const JobPostDetail = () => {
                 <div>공고마감일자 | {getDateFormat(new Date(jobPostingInfo.endDate))}</div>
                 <Dday>({getDday(jobPostingInfo.endDate)})</Dday>
               </DeadLineContainer>
-              {jobPostingInfo.companyKey == authUser?.key && (
+              {jobPostingInfo.companyKey == authUser?.user.key && (
                 <EditDeleteButtonContianer>
                   <IconButton className="delete" onClick={deleteJobPosting}>
                     <MdDeleteForever />
@@ -270,7 +287,7 @@ const JobPostDetail = () => {
               </LongInfo>
             </InfoContainer>
           </Container>
-          {jobPostingInfo.companyKey == authUser?.key || (
+          {jobPostingInfo.companyKey == authUser?.user.key || (
             <ApplyButton onClick={Apply}>지원하기</ApplyButton>
           )}
         </Inner>

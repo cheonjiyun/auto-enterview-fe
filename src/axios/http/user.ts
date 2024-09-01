@@ -2,7 +2,7 @@ import { IUser, IUserAuth } from "../../type/user";
 import { http } from "../instances";
 
 export const postSignin = (userData: IUserAuth) => {
-  return http.post<IUser>(`common/signin`, userData);
+  return http.post<IUser>(`login`, userData);
 };
 
 export const postSignup = (userData: IUserAuth) => {
@@ -35,6 +35,6 @@ export const postChangePassword = (key: string, oldPassword: string, newPassword
 };
 
 export const postWithdrawCandidate = (key: string) => {
-  const url = `/common/${key}/withdraw`; 
+  const url = `/common/${key}/withdraw`;
   return http.delete(url);
 };

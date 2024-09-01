@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { SyntheticEvent, useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { PostJobPosting } from "../type/jobPosting";
+import { JobPosting } from "../type/jobPosting";
 import { postCompaniesJobPosting, putCompaniesJobPosting } from "../axios/http/jobPosting";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getTwoDigit, toLocaleDate } from "../utils/Format";
@@ -14,6 +14,7 @@ import { useRecoilValue } from "recoil";
 import { authUserState } from "../recoil/store";
 import { optionEducation, optionEmploymentType, optionJob, techStacks } from "../constants/options";
 import { FREE_HOUR } from "../constants/Word";
+import { RandomJobPostingKey } from "../utils/RandomKey";
 
 interface JobPostingForm {
   jobCategory: string;
@@ -92,11 +93,11 @@ const CreateJobPost = () => {
   };
 
   //파일업로드
-  const uploadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
-      setFormData({ ...formData, image: event.target.files[0] });
-    }
-  };
+  // const uploadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (event.target.files) {
+  //     setFormData({ ...formData, image: event.target.files[0] });
+  //   }
+  // };
 
   const getStringWorkingHour = (startTime: Date, endTime: Date) => {
     return `${getTwoDigit(startTime.getHours())}:${getTwoDigit(startTime.getMinutes())} ~ ${getTwoDigit(endTime.getHours())}:${getTwoDigit(endTime.getMinutes())}`;
@@ -179,14 +180,65 @@ const CreateJobPost = () => {
   const onSubmit = async (event: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
     event.preventDefault();
 
-    const requestData: PostJobPosting = {
+    if (!authUser) {
+      alert("유저정보없음 로그인해주세요.");
+      return;
+    }
+
+    // const requestData: PostJobPosting = {
+    //   title: formData.title,
+    //   jobCategory: formData.jobCategory,
+    //   career: +formData.career,
+    //   techStack: formData.techStack,
+    //   jobPostingStep: formData.jobPostingSteps,
+    //   workLocation: formData.workLocation,
+    //   education: formData.education,
+    //   employmentType: formData.employmentType,
+    //   salary: +formData.salary,
+    //   workTime: freeHour ? FREE_HOUR : getStringWorkingHour(formData.startHour, formData.endHour),
+    //   startDate: toLocaleDate(formData.startDate),
+    //   endDate: toLocaleDate(formData.endDate),
+    //   jobPostingContent: formData.jobPostingContent,
+    //   passingNumber: +formData.passingNumber,
+    // };
+
+    // // 최종 body
+    // const resultBody = new FormData();
+    // if (formData.image) {
+    //   resultBody.append("image", formData.image);
+    // }
+
+    // resultBody.append(
+    //   "jobPostingInfo",
+    //   new Blob([JSON.stringify(requestData)], { type: "application/json" }),
+    // );
+
+    // if (editMode) {
+    //   await putCompaniesJobPosting(jobPostingKey, resultBody, {
+    //     headers: { "Content-Type": "multipart/form-data" },
+    //   });
+    //   navigate(`/jobpost-detail/${jobPostingKey}`);
+    // } else {
+    //   await postCompaniesJobPosting(authUser?.key, resultBody, {
+    //     headers: { "Content-Type": "multipart/form-data" },
+    //   });
+    //   navigate("/company-mypage");
+    // }
+
+    // json-server용
+    const randomJobPostingKey = RandomJobPostingKey();
+    const requestData: JobPosting = {
+      id: randomJobPostingKey,
+      jobPostingKey: randomJobPostingKey,
+      companyKey: authUser.user.key,
+      companyName: authUser.user.name,
       title: formData.title,
-      jobCategory: formData.jobCategory,
+      jobCategory: optionJob.find(job => job.value == formData.jobCategory)?.label || "",
       career: +formData.career,
       techStack: formData.techStack,
-      jobPostingStep: formData.jobPostingSteps,
+      step: formData.jobPostingSteps,
       workLocation: formData.workLocation,
-      education: formData.education,
+      education: optionEducation.find(edu => edu.value == formData.education)?.label || "",
       employmentType: formData.employmentType,
       salary: +formData.salary,
       workTime: freeHour ? FREE_HOUR : getStringWorkingHour(formData.startHour, formData.endHour),
@@ -194,33 +246,14 @@ const CreateJobPost = () => {
       endDate: toLocaleDate(formData.endDate),
       jobPostingContent: formData.jobPostingContent,
       passingNumber: +formData.passingNumber,
+      image: "",
     };
 
-    // 최종 body
-    const resultBody = new FormData();
-    if (formData.image) {
-      resultBody.append("image", formData.image);
-    }
-
-    resultBody.append(
-      "jobPostingInfo",
-      new Blob([JSON.stringify(requestData)], { type: "application/json" }),
-    );
-
-    if (!authUser) {
-      alert("유저정보없음 로그인해주세요.");
-      return;
-    }
-
     if (editMode) {
-      await putCompaniesJobPosting(jobPostingKey, resultBody, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await putCompaniesJobPosting(jobPostingKey, requestData);
       navigate(`/jobpost-detail/${jobPostingKey}`);
     } else {
-      await postCompaniesJobPosting(authUser?.key, resultBody, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await postCompaniesJobPosting(authUser?.user.key, requestData);
       navigate("/company-mypage");
     }
   };
@@ -554,13 +587,13 @@ const CreateJobPost = () => {
                 })
               }
             />
-            <FileContainer>
+            {/* <FileContainer>
               <FileName>{formData.image?.name || ""}</FileName>
               <FileInput type="file" id="image" onChange={uploadFile} accept=".jpg, .jpeg, .png" />
               <label htmlFor="image">이미지 업로드</label>
               <Span>* 이미지 업로드 시 "jpg", "jpeg", "png" 만 가능</Span>
               <Span>(최대 허용 크기 10MB)</Span>
-            </FileContainer>
+            </FileContainer> */}
           </InputContainer>
           <SubmitButton
             type="submit"
@@ -589,12 +622,12 @@ const Title = styled.h2`
   margin-bottom: 24px;
 `;
 
-const Span = styled.span`
-  font-size: 12px;
-  margin-top: 10px;
-  display: flex;
-  flex-direction: row;
-`;
+// const Span = styled.span`
+//   font-size: 12px;
+//   margin-top: 10px;
+//   display: flex;
+//   flex-direction: row;
+// `;
 
 const Wrapper = styled.div`
   max-width: 1200px;
@@ -718,44 +751,44 @@ const Contents = styled.textarea`
   resize: none;
 `;
 
-const FileContainer = styled.div`
-  margin-top: 8px;
-  display: flex;
-  gap: 16px;
-`;
+// const FileContainer = styled.div`
+//   margin-top: 8px;
+//   display: flex;
+//   gap: 16px;
+// `;
 
-const FileName = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px;
-  line-height: 1rem;
-  color: #707070;
-  border: 1px solid var(--border-gray-100);
-  border-radius: var(--button-radius);
-`;
+// const FileName = styled.div`
+//   flex: 1;
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+//   padding: 16px;
+//   line-height: 1rem;
+//   color: #707070;
+//   border: 1px solid var(--border-gray-100);
+//   border-radius: var(--button-radius);
+// `;
 
-const FileInput = styled.input`
-  display: none;
+// const FileInput = styled.input`
+//   display: none;
 
-  & + label {
-    display: inline-block;
-    color: #ffffff;
-    padding: 16px;
-    background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    border-radius: var(--button-radius);
-    word-break: keep-all;
-    transition: all 0.1s;
-    cursor: pointer;
-    user-select: none;
+//   & + label {
+//     display: inline-block;
+//     color: #ffffff;
+//     padding: 16px;
+//     background-color: var(--primary-color);
+//     border: 1px solid var(--primary-color);
+//     border-radius: var(--button-radius);
+//     word-break: keep-all;
+//     transition: all 0.1s;
+//     cursor: pointer;
+//     user-select: none;
 
-    &:active {
-      transform: scale(99%);
-    }
-  }
-`;
+//     &:active {
+//       transform: scale(99%);
+//     }
+//   }
+// `;
 
 const SubmitButton = styled.input`
   margin-top: 100px;

@@ -44,7 +44,7 @@ const Account = () => {
 
     try {
       // 기존 비밀번호가 서버 API와 일치하는지 확인 및 비밀번호 변경 로직
-      const response = await postChangePassword(authUser.key, oldPassword, newPassword);
+      const response = await postChangePassword(authUser.user.key, oldPassword, newPassword);
 
       if (response) {
         alert("비밀번호가 성공적으로 변경되었습니다");
@@ -68,7 +68,7 @@ const Account = () => {
     if (!authUser) return;
     if (window.confirm("모든 정보가 다 사라집니다. 정말 탈퇴하시겠습니까?")) {
       try {
-        await postWithdrawCandidate(authUser.key); // 탈퇴 API 호출
+        await postWithdrawCandidate(authUser.user.key); // 탈퇴 API 호출
         setAuthUser(null);
         localStorage.removeItem("token");
         alert("탈퇴되었습니다");

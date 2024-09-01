@@ -84,7 +84,7 @@ const CreateResume = () => {
     if (authUser) {
       const fetchResume = async () => {
         try {
-          const response = await getResume(authUser?.key);
+          const response = await getResume(authUser?.user.key);
           const resumeData = response;
 
           setTitle(resumeData.title || "");
@@ -300,16 +300,16 @@ const CreateResume = () => {
     try {
       if (resumeData) {
         // PUT 요청으로 이력서 업데이트
-        await putResume(authUser?.key, resultData, {
+        await putResume(authUser?.user.key, resultData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       } else {
         // POST 요청으로 새 이력서 작성
-        await postResume(authUser?.key, resultData, {
+        await postResume(authUser?.user.key, resultData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       }
-      navigate(`/view-resume/${authUser?.key}`);
+      navigate(`/view-resume/${authUser?.user.key}`);
     } catch (error) {
       console.error("Error submitting resume:", error);
     }

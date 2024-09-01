@@ -41,7 +41,7 @@ const Modal = ({ type, stepId, onClose }: ModalProps) => {
     if (!authUser || !jobPostingKey) return;
 
     const props = {
-      companyKey: authUser.key,
+      companyKey: authUser.user.key,
       jobPostingKey,
       stepId,
     };

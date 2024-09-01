@@ -72,7 +72,7 @@ const ViewResume: React.FC = () => {
       <Wrapper className="inner-1200">
         <Title>
           이력서
-          {candidateKey === authUser?.key && (
+          {candidateKey === authUser?.user.key && (
             <Icon>
               <Edit onClick={handleEdit}>
                 <MdOutlineEdit size={20} />

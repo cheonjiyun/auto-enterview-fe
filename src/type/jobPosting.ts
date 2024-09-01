@@ -1,10 +1,11 @@
 export interface JobInfos {
-  jobPostingsList: JobInfo[];
-  totalElements: number;
-  totalPages: number;
+  data: JobInfo[];
+  itmes: number;
+  pages: number;
 }
 
 export interface JobInfo {
+  id: string;
   jobPostingKey: string;
   companyName: string;
   title: string;
@@ -61,3 +62,26 @@ export interface JobPostingForCompany {
 }
 
 export type JobPostingList = JobPostingForCompany[];
+
+// json-server
+export interface JobPosting {
+  id: string;
+  jobPostingKey: string;
+  companyKey: string;
+  companyName: string;
+  title: string;
+  jobCategory: string;
+  career: number;
+  workLocation: string;
+  education: string;
+  employmentType: string;
+  salary: number;
+  workTime: string;
+  startDate: string;
+  endDate: string;
+  jobPostingContent: string;
+  techStack: string[];
+  step: string[];
+  passingNumber: number;
+  image: string;
+}

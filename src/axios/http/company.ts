@@ -5,8 +5,8 @@ export const getCompanyInfo = (companyKey: string) => {
   return http.get<CompanyInfo>(`/companies/${companyKey}/information`);
 };
 
-export const postCompanyInfo = (companyKey: string, body: CompanyInfo) => {
-  return http.post<CompanyInfo>(`/companies/${companyKey}/information`, body);
+export const postCompanyInfo = (body: CompanyInfo) => {
+  return http.post<CompanyInfo>(`/companies`, body);
 };
 
 export const putCompanyInfo = (companyKey: string, body: CompanyInfo) => {

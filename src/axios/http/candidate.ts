@@ -1,6 +1,6 @@
-import { AppliedJobPostings } from "../../type/candidate";
+import { AppliedJobPostingsList } from "../../type/candidate";
 import { http } from "../instances";
 
-export const getAppliedJobPostings = (candidateKey: string): Promise<AppliedJobPostings> => {
-  return http.get<AppliedJobPostings>(`/candidates/${candidateKey}/applied-job-postings?page=1`);
+export const getAppliedJobPostings = (candidateKey: string) => {
+  return http.get<AppliedJobPostingsList[]>(`/candidates/${candidateKey}/applied-job-postings`);
 };

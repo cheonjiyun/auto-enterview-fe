@@ -200,7 +200,7 @@ const RecruitBoard = () => {
       </Helmet>
       <Wrapper>
         <Inner className="inner-1200">
-          <UserName>{authUser?.name}</UserName>
+          <UserName>{authUser?.user.name}</UserName>
           <Container>
             <SubTitle>{title}</SubTitle>
             <Board

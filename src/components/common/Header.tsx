@@ -6,22 +6,22 @@ import { FaKey } from "react-icons/fa6";
 import { useRecoilState } from "recoil";
 import { authUserState } from "../../recoil/store";
 import { IoIosLock } from "react-icons/io";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const Header = () => {
   const [authUser, setAuthUser] = useRecoilState(authUserState);
 
-  const token = localStorage.getItem("token");
-  if (token) {
-    // 토큰의 만료시간보다 지났으면 토큰 삭제
-    const now = new Date();
-    if (+JSON.parse(token).expires < +now.getTime()) {
-      localStorage.removeItem("token");
-    }
-  }
-  useEffect(() => {
-    if (!token) setAuthUser(null);
-  }, [setAuthUser, token]);
+  // const token = localStorage.getItem("token");
+  // if (token) {
+  //   // 토큰의 만료시간보다 지났으면 토큰 삭제
+  //   const now = new Date();
+  //   if (+JSON.parse(token).expires < +now.getTime()) {
+  //     localStorage.removeItem("token");
+  //   }
+  // }
+  // useEffect(() => {
+  //   if (!token) setAuthUser(null);
+  // }, [setAuthUser, token]);
 
   const navigate = useNavigate();
 
@@ -48,14 +48,16 @@ const Header = () => {
           </Link>
         </Logo>
         <Buttons>
-          {token && authUser ? (
+          {authUser ? (
             <>
               <Logout className="log-out" onClick={logOut}>
                 <HiArrowLeftOnRectangle />
                 <Text>로그 아웃</Text>
               </Logout>
               {/* <Button to={isCompany ? "/company-mypage" : "/user-mypage"}> */}
-              <Button to={authUser.role === "ROLE_CANDIDATE" ? "/user-mypage" : "/company-mypage"}>
+              <Button
+                to={authUser.user.role === "ROLE_CANDIDATE" ? "/user-mypage" : "/company-mypage"}
+              >
                 <IoPersonCircleOutline />
                 <Text>마이 페이지</Text>
               </Button>
