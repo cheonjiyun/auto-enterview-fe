@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.49.1",
-    "@types/json-server": "^0.14.7",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
