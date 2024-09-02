@@ -2,14 +2,10 @@ import { AxiosRequestConfig } from "axios";
 import { PostedJobPoting } from "../../type/company";
 import { JobPosting, JobPostingResponse } from "../../type/jobPosting";
 import { http } from "../instances";
-import { toLocaleDate } from "../../utils/Format";
 
 // 전체 공고 조회
 export const getJobPostings = (page: number) => {
-  const today = new Date();
-  return http.get<JobPosting[]>(
-    `common/job-postings?page=${page}&_sort=endDate&endDate_gte=${toLocaleDate(today)}`,
-  );
+  return http.get<JobPosting[]>(`common/job-postings?_page=${page}&_limit=25`);
 };
 
 // 회사 마이페이지 공고 조회
