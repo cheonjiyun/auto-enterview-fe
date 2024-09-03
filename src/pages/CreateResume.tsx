@@ -252,6 +252,7 @@ const CreateResume = () => {
     console.log(filterQualifications.map(el => console.log(el)));
 
     const ResumeData = {
+      candidateKey: authUser.user.key,
       title: title,
       jobWant: jobCategory || null,
       name: data.name || "",

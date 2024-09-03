@@ -5,5 +5,7 @@
   "/companies/:companyKey/job-postings": "/job-postings",
   "/companies/:companyKey/posted-job-postings": "/job-postings?companyKey=:companyKey",
   "/job-postings/:jobPostingKey/apply": "/appliedJobPosting/",
-  "/candidates/:candidateKey/applied-job-postings": "/appliedJobPosting?candidateKey=:candidateKey"
+  "/candidates/:candidateKey/applied-job-postings": "/appliedJobPosting?candidateKey=:candidateKey",
+  "/job-postings/:jobPostingKey/candidates-list": "/job-postings?jobPostingKey=:jobPostingKey",
+  "/candidates/:candidateKey/resume": "/resume?candidateKey=:candidateKey"
 }

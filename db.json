@@ -1107,5 +1107,363 @@
       "title": "iOS 개발자",
       "id": 2
     }
+  ],
+  "candidates": [
+    {
+      "jobPostingKey": "9712b6ba2e454dba974f289f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": [
+            {
+              "candidateKey": "5c1ebd76ee1e4cd2b66c4285127a5d1",
+              "candidateName": "사용자이름",
+              "resumeKey": "4c1ebd76ee1e4cd2b86c4285127a5d1",
+              "techStack": ["JavaScript", "Swift", "React"],
+              "scheduleDateTime": null
+            }
+          ]
+        },
+        {
+          "stepId": 2,
+          "stepName": "코딩테스트",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "과제",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 4,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 5,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 6,
+          "stepName": "3차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba97b56392f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba15759a92f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454df6812469a92f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba9613aa92f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba12349dba97469a92f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba97469a92fd985e1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba97469a92f5e954e1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba974d5682f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dc5865469a92f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba97469a92f3575fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "9712b6ba2e454dba92867a92f5a68fe1",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 2,
+          "stepName": "코딩테스트",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 4,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    },
+    {
+      "jobPostingKey": "3503478587d9c8bda7cf51285ff00914",
+      "candidateList": [
+        {
+          "stepId": 1,
+          "stepName": "서류전형",
+          "candidateTechStackInterviewInfoDtoList": [
+            {
+              "candidateKey": "5c1ebd76ee1e4cd2b66c4285127a5d1",
+              "candidateName": "사용자이름",
+              "resumeKey": "4c1ebd76ee1e4cd2b86c4285127a5d1",
+              "techStack": ["JavaScript", "Swift", "React"],
+              "scheduleDateTime": null
+            }
+          ]
+        },
+        {
+          "stepId": 2,
+          "stepName": "1차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 3,
+          "stepName": "2차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 4,
+          "stepName": "3차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 5,
+          "stepName": "4차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 6,
+          "stepName": "5차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        },
+        {
+          "stepId": 7,
+          "stepName": "6차면접",
+          "candidateTechStackInterviewInfoDtoList": []
+        }
+      ]
+    }
+  ],
+  "resume": [
+    {
+      "candidateKey": "5c1ebd76ee1e4cd2b66c4285127a5d1",
+      "resumeKey": "4c1ebd76ee1e4cd2b86c4285127a5d1",
+      "title": "개발자 댕댕입니다.",
+      "jobWant": "",
+      "name": "사용자이름",
+      "gender": "",
+      "birthDate": "",
+      "email": "",
+      "phoneNumber": "",
+      "address": "",
+      "education": "",
+      "schoolName": "",
+      "techStack": ["JavaScript", "Swift", "React"],
+      "experience": [
+        {
+          "experienceName": "",
+          "startDate": "",
+          "endDate": ""
+        }
+      ],
+      "career": [
+        {
+          "companyName": "",
+          "jobCategory": "",
+          "startDate": "",
+          "endDate": ""
+        }
+      ],
+      "certificates": [
+        {
+          "certificateName": "",
+          "certificateDate": ""
+        }
+      ],
+      "portfolio": "",
+      "resumeImageUrl": ""
+    }
   ]
 }
