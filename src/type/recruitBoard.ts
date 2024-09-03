@@ -10,6 +10,11 @@ export interface RecruitBoardData {
   }[];
 }
 
+export interface RecruitBoardResponse {
+  jobPostingKey: string;
+  candidateList: RecruitBoardData[];
+}
+
 export interface CandidateInfo {
   candidateKey: string;
   candidateName: string;
