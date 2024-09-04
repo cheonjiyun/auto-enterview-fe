@@ -39,7 +39,7 @@ const RecruitBoard = () => {
     isPending,
     isError,
   } = useQuery({
-    queryKey: ["candidate-list"],
+    queryKey: ["candidate-list", jobPostingKey],
     queryFn: () => fetchCandidates(jobPostingKey),
   });
 
